@@ -1,24 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJ MetaleraLoca | Radio Online</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-overlay: rgba(15, 15, 20, 0.85);
+            --bg-overlay: rgba(15, 15, 20, 0.85); 
             --card-bg: rgba(26, 26, 32, 0.9);
-            --accent-color: #8b5cf6;
-            --blue-glow: #3b82f6;
+            --accent-color: #8b5cf6; 
+            --blue-glow: #3b82f6; 
             --text-main: #ffffff;
             --text-dim: #a0a0a0;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
+            /* Fondo mezclado correctamente */
             background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), 
                         url('img/fondo.png') no-repeat center center fixed;
             background-size: cover;
@@ -27,6 +35,7 @@
             min-height: 100vh;
         }
 
+        /* --- Header & Player --- */
         header {
             background: rgba(10, 10, 15, 0.95);
             padding: 20px;
@@ -53,16 +62,66 @@
             filter: invert(100%) hue-rotate(240deg) brightness(1.2);
         }
 
-        .btn-fix {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 5px 15px;
-            border-radius: 20px;
+        /* --- Contenido Principal (Mantenido) --- */
+        .profile-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .img-perfil {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: linear-gradient(to right, #fff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: var(--blue-glow);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        /* --- Cajas de Texto (Mantenido) --- */
+        .info-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 12px;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .info-box:hover {
+            border-left-color: var(--blue-glow);
+            transform: translateY(-5px);
+            background: rgba(30, 30, 40, 1);
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
             font-size: 0.8rem;
-            margin-top: 10px;
-            text-decoration: none;
-            display: inline-block;
         }
     </style>
 </head>
@@ -74,9 +133,6 @@
                 <source src="http://uk18freenew.listen2myradio.com:7561/;" type="audio/mpeg">
                 Tu navegador no soporta audio.
             </audio>
-            <div class="d-block d-md-none mt-2" style="font-size: 0.7rem; color: var(--text-dim);">
-                ¿No escuchas nada? <a href="http://uk18freenew.listen2myradio.com:7561/;" target="_blank" class="btn-fix">Activar Radio</a>
-            </div>
         </div>
     </header>
 
