@@ -1,180 +1,250 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ MetaleraLoca | Radio Online</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-overlay: rgba(15, 15, 20, 0.85); 
-            --card-bg: rgba(26, 26, 32, 0.9);
-            --accent-color: #8b5cf6; 
-            --blue-glow: #3b82f6; 
-            --text-main: #ffffff;
-            --text-dim: #a0a0a0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>DJ MetaleraLoca | Radio Online</title>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            /* Fondo mezclado correctamente */
-            background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), 
-                        url('img/fondo.png') no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-main);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 
-        /* --- Header & Player --- */
-        header {
-            background: rgba(10, 10, 15, 0.95);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid var(--accent-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+<style>
 
-        .player-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #000000;
-            padding: 15px;
-            border-radius: 50px;
-            border: 1px solid var(--blue-glow);
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-        }
+:root {
+    --bg-overlay: rgba(15, 15, 20, 0.85); 
+    --card-bg: rgba(26, 26, 32, 0.9);
+    --accent-color: #8b5cf6; 
+    --blue-glow: #3b82f6; 
+    --text-main: #ffffff;
+    --text-dim: #a0a0a0;
+}
 
-        audio {
-            width: 100%;
-            height: 35px;
-            filter: invert(100%) hue-rotate(240deg) brightness(1.2);
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* --- Contenido Principal (Mantenido) --- */
-        .profile-section {
-            text-align: center;
-            padding: 50px 20px;
-        }
+body {
+    font-family: 'Inter', sans-serif;
 
-        .img-perfil {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid var(--accent-color);
-            margin-bottom: 20px;
-            object-fit: cover;
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
-        }
+    background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), 
+                url('img/fondo.png') no-repeat center center fixed;
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            background: linear-gradient(to right, #fff, var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    background-size: cover;
+    color: var(--text-main);
+    min-height: 100vh;
+}
 
-        .tagline {
-            color: var(--blue-glow);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 40px;
-        }
+/* Header */
 
-        /* --- Cajas de Texto (Mantenido) --- */
-        .info-box {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-left: 4px solid var(--accent-color);
-            padding: 20px;
-            border-radius: 12px;
-            height: 100%;
-            transition: all 0.3s ease;
-        }
+header {
+    background: rgba(10, 10, 15, 0.95);
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+}
 
-        .info-box:hover {
-            border-left-color: var(--blue-glow);
-            transform: translateY(-5px);
-            background: rgba(30, 30, 40, 1);
-        }
+/* Botón */
 
-        .highlight {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
+.open-player-btn {
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-dim);
-            font-size: 0.8rem;
-        }
-    </style>
+    background: linear-gradient(45deg,var(--accent-color),var(--blue-glow));
+    border: none;
+    color: white;
+
+    padding: 12px 30px;
+    border-radius: 40px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 15px rgba(139,92,246,.5);
+
+    transition: all .3s;
+}
+
+.open-player-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(59,130,246,.7);
+}
+
+/* Perfil */
+
+.profile-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.img-perfil {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+
+    margin-bottom: 20px;
+    object-fit: cover;
+
+    box-shadow: 0 0 20px rgba(139,92,246,.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    background: linear-gradient(to right,#fff,var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    color: var(--blue-glow);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: .9rem;
+    margin-bottom: 40px;
+}
+
+/* Info boxes */
+
+.info-box {
+
+    background: var(--card-bg);
+
+    border: 1px solid rgba(255,255,255,.1);
+    border-left: 4px solid var(--accent-color);
+
+    padding: 20px;
+    border-radius: 12px;
+
+    transition: .3s;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--blue-glow);
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-dim);
+    font-size: .8rem;
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="player-container">
-            <audio controls autoplay>
-                <source src="http://uk18freenew.listen2myradio.com:7561/;" type="audio/mpeg">
-                Tu navegador no soporta audio.
-            </audio>
-        </div>
-    </header>
+<header>
 
-    <main class="container">
-        <section class="profile-section">
-            <img src="img/perfil.png" alt="DJ MetaleraLoca" class="img-perfil">
-            <h1>DJ MetaleraLoca</h1>
-            <p class="tagline">La metalera rubia DJ de Habbo en tus oídos</p>
+    <!-- BOTÓN -->
+    <button 
+        class="open-player-btn"
+        onclick="abrirPlayer()"
+    >
+        🎧 Abrir Reproductor
+    </button>
 
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-box">
-                        <p>La Patty Lopresti o PattyLo... pero podés decirme <span class="highlight">Patty</span></p>
-                    </div>
-                </div>
+</header>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-box">
-                        <p>Soy leal a los que me son <span class="highlight">leales</span>...</p>
-                    </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-box">
-                        <p>Sé mucho y digo poco... <span class="highlight">quizás nada</span></p>
-                    </div>
-                </div>
+<main class="container">
 
-                <div class="col-lg-8">
-                    <div class="info-box text-center" style="border-left: none; border-bottom: 4px solid var(--blue-glow);">
-                        <p>Un placer auditivo que se libera entre tus dedos que tocan la pantalla... <br>
-                        <strong>La DJ Metalera Loca desde Argentina, para el mundo.</strong></p>
-                    </div>
-                </div>
+<section class="profile-section">
+
+    <img src="img/perfil.png" class="img-perfil">
+
+    <h1>DJ MetaleraLoca</h1>
+
+    <p class="tagline">La metalera rubia DJ de Habbo en tus oídos</p>
+
+
+    <div class="row g-4 justify-content-center">
+
+        <div class="col-md-6 col-lg-4">
+            <div class="info-box">
+                La Patty Lopresti o PattyLo... pero podés decirme 
+                <span class="highlight">Patty</span>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 DJ MetaleraLoca. Todos los derechos reservados.</p>
-    </footer>
+        <div class="col-md-6 col-lg-4">
+            <div class="info-box">
+                Soy leal a los que me son 
+                <span class="highlight">leales</span>...
+            </div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="col-md-6 col-lg-4">
+            <div class="info-box">
+                Sé mucho y digo poco... 
+                <span class="highlight">quizás nada</span>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+
+            <div class="info-box text-center"
+                style="border-left:none;border-bottom:4px solid var(--blue-glow);">
+
+                Un placer auditivo que se libera entre tus dedos... <br>
+                <strong>Desde Argentina para el mundo.</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+    &copy; 2026 DJ MetaleraLoca
+</footer>
+
+
+<script>
+function abrirPlayer() {
+
+    const w = 720;
+    const h = 220;
+
+    const x = (screen.width / 2) - (w / 2);
+    const y = (screen.height / 2) - (h / 2);
+
+    window.open(
+        "radiometaleraloca.html",
+        "RadioPlayer",
+
+        `
+        width=${w},
+        height=${h},
+        left=${x},
+        top=${y},
+        resizable=no,
+        scrollbars=no,
+        status=no,
+        toolbar=no,
+        menubar=no,
+        location=no
+        `
+    );
+}
+</script>
+
 </body>
 </html>
